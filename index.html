@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SQLAlchemy Notes App</title>
+</head>
+<body>
+
+<h1>Notes App (ORM Version)</h1>
+
+<form action="/add" method="POST">
+    <input type="text" name="content" required>
+
+    <button type="submit">
+        Add Note
+    </button>
+</form>
+
+<hr>
+
+{% for note in notes %}
+    <p>
+        {{ note.content }}
+
+        <a href="/delete/{{ note.id }}">
+            Delete
+        </a>
+    </p>
+{% endfor %}
+
+</body>
+</html>
